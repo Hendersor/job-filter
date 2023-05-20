@@ -34,14 +34,16 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html",
-      filename: "./public/index.html",
+      filename: "index.html",
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css",
     }),
   ],
   devServer: {
-    contentBase: path.join(__dirname, "dist"),
+    static: {
+      directory: path.join(__dirname, "dist"),
+    },
     compress: true,
     port: 3006,
   },
