@@ -4,7 +4,7 @@ import { Header } from "./Header";
 
 const App = () => {
   return (
-    <main>
+    <main className="w-full h-screen bg-[#EFFAFA] ">
       <Header />
     </main>
   );
