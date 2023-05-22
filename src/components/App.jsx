@@ -1,12 +1,17 @@
 import React from "react";
 import "../styles/tailwind.css";
-import { Header } from "./Header";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Favorites } from "./Favorites";
+import { Home } from "./Home";
 
 const App = () => {
   return (
-    <main className="w-full h-screen bg-[#EFFAFA] ">
-      <Header />
-    </main>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/favorites" element={<Favorites />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
