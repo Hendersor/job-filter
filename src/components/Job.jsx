@@ -1,27 +1,23 @@
 import React from "react";
 import { Tag } from "./Tag";
 
-const Job = () => {
+const Job = ({ company, urlImage, position, location, contract, postedAt }) => {
   return (
     <div className="w-10/12 h-28 my-3 flex shadow-xl bg-white rounded-xl">
       <div className="w-2/4 h-full flex">
         <figure className="flex justify-center items-center ml-7">
-          <img
-            className="w-20"
-            src="https://res.cloudinary.com/dwdz4mn27/image/upload/v1684532111/photosnap_hpydlw.svg"
-            alt=""
-          />
+          <img className="w-20" src={urlImage} alt="companyLogo" />
         </figure>
 
         <div className="flex flex-col justify-center items-start ml-5 text-base">
-          <p className="text-[#5BA4A4] font-bold">Photosnap</p>
+          <p className="text-[#5BA4A4] font-bold">{company}</p>
           <h1 className="text-[#2C3A3A] font-[700] text-lg hover:text-[#5BA4A4] cursor-pointer">
-            Senior Frontend Developer
+            {position}
           </h1>
           <div className="w-60 flex justify-between text-[#7B8E8E] text-sm font-medium">
-            <p>1d ago</p>
-            <p>Full Time</p>
-            <p>USA only</p>
+            <p>{postedAt}</p>
+            <p>{contract}</p>
+            <p>{location}</p>
           </div>
         </div>
       </div>

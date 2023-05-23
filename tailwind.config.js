@@ -18,7 +18,7 @@ module.exports = {
         "100px": "100px",
       },
       height: {
-        150: "150vh",
+        200: "200vh",
       },
       fontFamily: {
         league: ["League Spartan", "sans-serif"],

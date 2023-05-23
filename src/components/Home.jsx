@@ -5,7 +5,7 @@ import { JobList } from "./JobList";
 
 const Home = () => {
   return (
-    <main className="w-full h-[150vh] bg-[#EFFAFA] flex flex-col">
+    <main className="w-full h-auto bg-[#EFFAFA] flex flex-col ">
       <Header />
       <JobList />
     </main>
