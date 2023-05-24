@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Tag } from "./Tag";
+import { BsBookmark, BsBookmarkFill } from "react-icons/bs";
 
 const Job = ({
   company,
@@ -13,6 +14,8 @@ const Job = ({
   languages,
   tools,
 }) => {
+  const [favorite, setFavorite] = useState(false);
+
   const allTags = [role, level, ...languages, ...tools];
   return (
     <div className="w-10/12 h-28 my-3 flex shadow-xl bg-white rounded-xl">
@@ -37,9 +40,15 @@ const Job = ({
         {allTags.map((tag) => (
           <Tag tag={tag} />
         ))}
+        <BsBookmarkFill
+          className={`cursor-pointer ${
+            favorite === true ? "text-amber-400" : ""
+          }`}
+          onClick={() => setFavorite(!favorite)}
+        />
       </div>
     </div>
   );
 };
-
+//
 export { Job };
