@@ -4,12 +4,7 @@ import { Job } from "./Job";
 
 const JobList = () => {
   const [jobList, setjobList] = useState(data);
-  // const allTags = jobList.map(({ role, level, languages, tools }) => ({
-  //   role,
-  //   level,
-  //   ...languages,
-  //   ...tools,
-  // }));
+
   console.log(jobList);
   return (
     <section className="w-full h-[200vh] flex flex-col self-center justify-evenly items-center py-10 ">

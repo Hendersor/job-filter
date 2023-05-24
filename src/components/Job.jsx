@@ -14,7 +14,6 @@ const Job = ({
   tools,
 }) => {
   const allTags = [role, level, ...languages, ...tools];
-  console.log(allTags);
   return (
     <div className="w-10/12 h-28 my-3 flex shadow-xl bg-white rounded-xl">
       <div className="w-2/4 h-full flex">

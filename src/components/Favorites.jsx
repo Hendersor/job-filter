@@ -1,11 +1,15 @@
 import React from "react";
+import { Header } from "./Header";
+import { JobList } from "./JobList";
 import "../styles/tailwind.css";
 
 const Favorites = () => {
   return (
-    <main className="w-full h-[150vh] bg-[#dde2e2] flex flex-col">
-      <header />
-      <h1>My favorite jobs</h1>
+    <main className="w-full h-[auto] bg-[#EFFAFA] flex flex-col">
+      <Header />
+      <h1>Favoritos</h1>
+
+      <JobList />
     </main>
   );
 };
