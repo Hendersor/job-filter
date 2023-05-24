@@ -2,19 +2,20 @@ import React, { useState } from "react";
 import { Tag } from "./Tag";
 import { BsBookmark, BsBookmarkFill } from "react-icons/bs";
 
-const Job = ({
-  company,
-  urlImage,
-  position,
-  location,
-  contract,
-  postedAt,
-  role,
-  level,
-  languages,
-  tools,
-}) => {
+const Job = (props) => {
   const [favorite, setFavorite] = useState(false);
+  const {
+    company,
+    urlImage,
+    position,
+    location,
+    contract,
+    postedAt,
+    role,
+    level,
+    languages,
+    tools,
+  } = props;
 
   const allTags = [role, level, ...languages, ...tools];
   return (
@@ -50,5 +51,5 @@ const Job = ({
     </div>
   );
 };
-//
+
 export { Job };
