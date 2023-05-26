@@ -15,7 +15,7 @@ module.exports = {
           "url('https://res.cloudinary.com/dwdz4mn27/image/upload/v1684532111/bg-header-desktop_kczt74.svg')",
       },
       spacing: {
-        "100px": "100px",
+        "30px": "30px",
       },
       height: {
         200: "200vh",
@@ -27,6 +27,9 @@ module.exports = {
     fontWeight: {
       medium: "500",
       bold: "700",
+    },
+    minHeight: {
+      20: "80px",
     },
   },
   plugins: [],

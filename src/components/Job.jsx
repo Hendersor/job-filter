@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Tag } from "./Tag";
-import { BsBookmark, BsBookmarkFill } from "react-icons/bs";
+import { BsBookmarkFill } from "react-icons/bs";
 
 const Job = (props) => {
   const [favorite, setFavorite] = useState(false);
@@ -15,6 +15,7 @@ const Job = (props) => {
     level,
     languages,
     tools,
+    displayTags,
   } = props;
 
   const allTags = [role, level, ...languages, ...tools];
@@ -39,7 +40,7 @@ const Job = (props) => {
       </div>
       <div className="w-3/4 h-full flex justify-evenly items-center">
         {allTags.map((tag) => (
-          <Tag tag={tag} />
+          <Tag tag={tag} displayTags={displayTags} />
         ))}
         <BsBookmarkFill
           className={`cursor-pointer ${
