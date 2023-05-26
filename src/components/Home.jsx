@@ -12,9 +12,23 @@ const Home = () => {
       setTags(updateTags);
     }
   };
+
+  const removeTag = (tag) => {
+    const tagsFiltered = tags.filter((t) => t !== tag);
+    setTags(tagsFiltered);
+  };
+
+  const removeAllTags = () => {
+    setTags([]);
+  };
+
   return (
     <main className="w-full h-auto bg-[#EFFAFA] flex flex-col ">
-      <Header selectedTags={tags} />
+      <Header
+        selectedTags={tags}
+        removeTag={removeTag}
+        removeAllTags={removeAllTags}
+      />
       <JobList displayTags={displayTags} />
     </main>
   );
