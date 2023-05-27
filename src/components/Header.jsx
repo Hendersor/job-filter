@@ -2,7 +2,6 @@ import React from "react";
 import { useNavigate, useLocation } from "react-router";
 import { useState } from "react";
 import { FilterTag } from "./FilterTag";
-import { Tag } from "./Tag";
 
 const Header = ({ selectedTags, removeTag, removeAllTags }) => {
   const navigate = useNavigate();
