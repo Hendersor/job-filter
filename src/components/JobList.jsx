@@ -3,7 +3,7 @@ import { Job } from "./Job";
 
 const JobList = ({ displayTags, jobList }) => {
   return (
-    <section className="w-full h-[200vh] flex flex-col self-center justify-evenly items-center py-10 ">
+    <section className="w-full h-[200vh] flex flex-col self-center justify-start items-center py-10 ">
       {jobList.map((job, index) => (
         <Job
           key={job.id}
