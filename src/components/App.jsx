@@ -1,5 +1,6 @@
-import React from "react";
+import React, { createContext } from "react";
 import "../styles/tailwind.css";
+import { JobProvider } from "../context";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Favorites } from "./Favorites";
 import { Home } from "./Home";
@@ -7,10 +8,12 @@ import { Home } from "./Home";
 const App = () => {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/favorites" element={<Favorites />} />
-      </Routes>
+      <JobProvider>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/favorites" element={<Favorites />} />
+        </Routes>
+      </JobProvider>
     </BrowserRouter>
   );
 };
