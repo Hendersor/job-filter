@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Tag } from "./Tag";
 import { BsBookmarkFill } from "react-icons/bs";
+import { JobsContext } from "../context";
+import data from "../data.json";
 
 const Job = (props) => {
-  const [favorite, setFavorite] = useState(false);
+  // const [favorite, setFavorite] = useState(false);
   const {
     company,
     urlImage,
@@ -16,7 +18,17 @@ const Job = (props) => {
     languages,
     tools,
     displayTags,
+    id,
   } = props;
+
+  const { tags } = useContext(JobsContext);
+  const [favoriteJobs, setFavoriteJobs] = useState([]);
+
+  const setFavorites = (id) => {
+    const getFavoriteJob = data.filter((job) => job.id === id)[0];
+    const updateJobs = [...favoriteJobs, getFavoriteJob];
+    setFavoriteJobs(updateJobs);
+  };
 
   const allTags = [role, level, ...languages, ...tools];
   return (
@@ -43,10 +55,10 @@ const Job = (props) => {
           <Tag tag={tag} displayTags={displayTags} />
         ))}
         <BsBookmarkFill
-          className={`cursor-pointer ${
-            favorite === true ? "text-amber-400" : ""
-          }`}
-          onClick={() => setFavorite(!favorite)}
+          // className={`cursor-pointer ${
+          //   favorite === true ? "text-amber-400" : ""
+          // }`}
+          onClick={() => setFavorites(id)}
         />
       </div>
     </div>

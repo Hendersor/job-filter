@@ -44,9 +44,10 @@ const JobList = () => {
 
   return (
     <section className="w-full h-[200vh] flex flex-col self-center justify-start items-center py-10 ">
-      {jobList.map((job, index) => (
+      {jobList.map((job) => (
         <Job
           key={job.id}
+          id={job.id}
           company={job.company}
           urlImage={job.logo}
           position={job.position}
