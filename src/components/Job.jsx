@@ -1,11 +1,8 @@
-import React, { useContext, useState } from "react";
+import React from "react";
 import { Tag } from "./Tag";
 import { BsBookmarkFill } from "react-icons/bs";
-import { JobsContext } from "../context";
-import data from "../data.json";
 
 const Job = (props) => {
-  // const [favorite, setFavorite] = useState(false);
   const {
     company,
     urlImage,
@@ -19,16 +16,8 @@ const Job = (props) => {
     tools,
     displayTags,
     id,
+    setFavorites,
   } = props;
-
-  const { tags } = useContext(JobsContext);
-  const [favoriteJobs, setFavoriteJobs] = useState([]);
-
-  const setFavorites = (id) => {
-    const getFavoriteJob = data.filter((job) => job.id === id)[0];
-    const updateJobs = [...favoriteJobs, getFavoriteJob];
-    setFavoriteJobs(updateJobs);
-  };
 
   const allTags = [role, level, ...languages, ...tools];
   return (

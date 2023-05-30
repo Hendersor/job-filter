@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { JobsContext } from "../context";
 import { Job } from "./Job";
 import data from "../data.json";
@@ -42,6 +42,21 @@ const JobList = () => {
     });
   };
 
+  const [favoriteJobs, setFavoriteJobs] = useState([]);
+
+  useEffect(() => {
+    console.log(favoriteJobs);
+  }, [favoriteJobs]);
+
+  const setFavorites = (id) => {
+    const getFavoriteJob = data.find((job) => job.id === id);
+    const findSameJob = favoriteJobs.some((j) => j.id === getFavoriteJob.id);
+    if (!findSameJob) {
+      const updateJobs = [...favoriteJobs, getFavoriteJob];
+      setFavoriteJobs(updateJobs);
+    }
+  };
+
   return (
     <section className="w-full h-[200vh] flex flex-col self-center justify-start items-center py-10 ">
       {jobList.map((job) => (
@@ -59,6 +74,7 @@ const JobList = () => {
           languages={job.languages}
           tools={job.tools}
           displayTags={displayTags}
+          setFavorites={setFavorites}
         />
       ))}
     </section>
