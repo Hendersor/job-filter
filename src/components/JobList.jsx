@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { JobsContext } from "../context";
 import { Job } from "./Job";
 import data from "../data.json";
@@ -6,6 +6,7 @@ import data from "../data.json";
 const JobList = () => {
   const { jobList, setJobList } = useContext(JobsContext);
   const { tags, setTags } = useContext(JobsContext);
+  const { favoriteJobs, setFavoriteJobs } = useContext(JobsContext);
 
   useEffect(() => {
     const filteredList = filterJobs();
@@ -41,8 +42,6 @@ const JobList = () => {
       return hasSelectedTags;
     });
   };
-
-  const [favoriteJobs, setFavoriteJobs] = useState([]);
 
   useEffect(() => {
     console.log(favoriteJobs);

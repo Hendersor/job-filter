@@ -1,7 +1,7 @@
 import React from "react";
 import { Header } from "./Header";
-import { JobList } from "./JobList";
 import "../styles/tailwind.css";
+import { JobListFavorites } from "./JobListFavorites";
 
 const Favorites = () => {
   return (
@@ -9,7 +9,7 @@ const Favorites = () => {
       <Header />
       <h1>Favoritos</h1>
 
-      <JobList />
+      <JobListFavorites />
     </main>
   );
 };
