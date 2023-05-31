@@ -43,16 +43,18 @@ const JobList = () => {
     });
   };
 
-  useEffect(() => {
-    console.log(favoriteJobs);
-  }, [favoriteJobs]);
-
   const setFavorites = (id) => {
     const getFavoriteJob = data.find((job) => job.id === id);
     const findSameJob = favoriteJobs.some((j) => j.id === getFavoriteJob.id);
     if (!findSameJob) {
       const updateJobs = [...favoriteJobs, getFavoriteJob];
       setFavoriteJobs(updateJobs);
+    } else {
+      const indexJob = favoriteJobs.indexOf(getFavoriteJob);
+      const newFavList = [...favoriteJobs];
+
+      newFavList.splice(indexJob, 1);
+      setFavoriteJobs(newFavList);
     }
   };
 
