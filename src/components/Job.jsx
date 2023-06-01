@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import { Tag } from "./Tag";
-import { BsBookmarkFill } from "react-icons/bs";
+import { BsBookmarkFill, BsBookmark } from "react-icons/bs";
+import { JobsContext } from "../context";
 
 const Job = (props) => {
   const {
@@ -16,10 +17,14 @@ const Job = (props) => {
     tools,
     displayTags,
     id,
-    setFavorites,
+    handleSetFavorites,
   } = props;
 
   const allTags = [role, level, ...languages, ...tools];
+
+  // const handleToggleFavorite = () => {
+  //   setFavoriteIcon(!favoriteIcon);
+  // };
   return (
     <div className="w-10/12 h-28 my-3 flex shadow-xl bg-white rounded-xl">
       <div className="w-2/4 h-full flex">
@@ -43,11 +48,11 @@ const Job = (props) => {
         {allTags.map((tag) => (
           <Tag tag={tag} displayTags={displayTags} />
         ))}
-        <BsBookmarkFill
-          // className={`cursor-pointer ${
-          //   favorite === true ? "text-amber-400" : ""
-          // }`}
-          onClick={() => setFavorites(id)}
+        <BsBookmark
+          className="cursor-pointer"
+          onClick={() => {
+            handleSetFavorites(id);
+          }}
         />
       </div>
     </div>

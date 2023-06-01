@@ -1,7 +1,8 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { JobsContext } from "../context";
 import { Job } from "./Job";
 import data from "../data.json";
+import { setFavorites } from "../helpers";
 
 const JobList = () => {
   const { jobList, setJobList } = useContext(JobsContext);
@@ -43,19 +44,8 @@ const JobList = () => {
     });
   };
 
-  const setFavorites = (id) => {
-    const getFavoriteJob = data.find((job) => job.id === id);
-    const findSameJob = favoriteJobs.some((j) => j.id === getFavoriteJob.id);
-    if (!findSameJob) {
-      const updateJobs = [...favoriteJobs, getFavoriteJob];
-      setFavoriteJobs(updateJobs);
-    } else {
-      const indexJob = favoriteJobs.indexOf(getFavoriteJob);
-      const newFavList = [...favoriteJobs];
-
-      newFavList.splice(indexJob, 1);
-      setFavoriteJobs(newFavList);
-    }
+  const handleSetFavorites = (id) => {
+    setFavorites(id, favoriteJobs, setFavoriteJobs);
   };
 
   return (
@@ -75,7 +65,7 @@ const JobList = () => {
           languages={job.languages}
           tools={job.tools}
           displayTags={displayTags}
-          setFavorites={setFavorites}
+          handleSetFavorites={handleSetFavorites}
         />
       ))}
     </section>

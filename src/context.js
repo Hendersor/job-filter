@@ -7,6 +7,7 @@ const JobProvider = ({ children }) => {
   const [tags, setTags] = useState([]);
   const [jobList, setJobList] = useState(data);
   const [favoriteJobs, setFavoriteJobs] = useState([]);
+  const [favoriteIcon, setFavoriteIcon] = useState(false);
 
   return (
     <JobsContext.Provider
@@ -17,6 +18,8 @@ const JobProvider = ({ children }) => {
         setJobList,
         favoriteJobs,
         setFavoriteJobs,
+        favoriteIcon,
+        setFavoriteIcon,
       }}
     >
       {children}
