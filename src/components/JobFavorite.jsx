@@ -1,5 +1,4 @@
-import React, { useState, useContext } from "react";
-import { JobsContext } from "../context";
+import React, { useState } from "react";
 import { Tag } from "./Tag";
 import { BsBookmarkFill } from "react-icons/bs";
 
@@ -22,7 +21,6 @@ const JobFavorite = (props) => {
 
   const allTags = [role, level, ...languages, ...tools];
   const [favorite, setFavorite] = useState(true);
-  //   const { saveJobs } = useContext(JobsContext);
 
   const handleFavorite = () => {
     setFavorite(!favorite);

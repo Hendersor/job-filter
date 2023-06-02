@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { JobsContext } from "../context";
 import { Job } from "./Job";
 import data from "../data.json";
@@ -7,7 +7,8 @@ import { setFavorites } from "../helpers";
 const JobList = () => {
   const { jobList, setJobList } = useContext(JobsContext);
   const { tags, setTags } = useContext(JobsContext);
-  const { favoriteJobs, setFavoriteJobs } = useContext(JobsContext);
+  const { saveFavorite } = useContext(JobsContext);
+  const { jobs } = useContext(JobsContext);
 
   useEffect(() => {
     const filteredList = filterJobs();
@@ -45,7 +46,7 @@ const JobList = () => {
   };
 
   const handleSetFavorites = (id) => {
-    setFavorites(id, favoriteJobs, setFavoriteJobs);
+    setFavorites(id, jobs, saveFavorite);
   };
 
   return (
