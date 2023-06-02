@@ -1,6 +1,6 @@
 import React, { createContext, useState } from "react";
 import data from "./data.json";
-import { useLocalStorage } from "./helpers";
+import { useLocalStorage } from "./localStorage";
 
 const JobsContext = createContext();
 

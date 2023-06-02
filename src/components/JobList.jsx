@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { JobsContext } from "../context";
 import { Job } from "./Job";
 import data from "../data.json";
-import { setFavorites } from "../helpers";
+import { setFavorites } from "../saveFavorites";
 
 const JobList = () => {
   const { jobList, setJobList } = useContext(JobsContext);
@@ -47,6 +47,10 @@ const JobList = () => {
 
   const handleSetFavorites = (id) => {
     setFavorites(id, jobs, saveFavorite);
+  };
+
+  const handleFilterJobs = (tags) => {
+    displayTags(tags);
   };
 
   return (

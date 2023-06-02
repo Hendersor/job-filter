@@ -27,7 +27,7 @@ const Header = () => {
 
   return (
     <section className="w-full h-40 bg-[darkCyan] bg-[url('https://res.cloudinary.com/dwdz4mn27/image/upload/v1684532111/bg-header-desktop_kczt74.svg')] bg-cover bg-no-repeat bg-center relative flex justify-center items">
-      {tags.length !== 0 && (
+      {activeLink !== "/favorites" && tags.length !== 0 && (
         <div className="flex items-center justify-between	 p-3 self-center min-h-[20] w-3/5 bg-white absolute top-[30px] rounded-md shadow-lg">
           <div className="flex flex-wrap justify-center w-4/5 gap-4 ">
             {tags.map((nameTag) => (

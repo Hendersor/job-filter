@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { JobsContext } from "../context";
 import { JobFavorite } from "./JobFavorite";
-import { setFavorites } from "../helpers";
+import { setFavorites } from "../saveFavorites";
 
 const JobListFavorites = () => {
   const { jobs, saveFavorite } = useContext(JobsContext);
