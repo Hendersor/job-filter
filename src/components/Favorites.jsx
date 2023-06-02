@@ -7,8 +7,6 @@ const Favorites = () => {
   return (
     <main className="w-full h-[auto] bg-[#EFFAFA] flex flex-col">
       <Header />
-      <h1>Favoritos</h1>
-
       <JobListFavorites />
     </main>
   );
